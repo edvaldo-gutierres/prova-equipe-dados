@@ -27,57 +27,6 @@ from datetime import datetime
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### 1.1 Campeonato
-# MAGIC
-# MAGIC A organização e os resultados de um campeonato estão representados pelas seguintes tabelas:
-# MAGIC
-# MAGIC ---
-# MAGIC
-# MAGIC Tabela `times`
-# MAGIC
-# MAGIC ```sql
-# MAGIC CREATE TABLE times (
-# MAGIC     time_id INTEGER NOT NULL,
-# MAGIC     time_nome VARCHAR NOT NULL,
-# MAGIC     UNIQUE(time_id)
-# MAGIC );
-# MAGIC ````
-# MAGIC
-# MAGIC <br>
-# MAGIC
-# MAGIC Dados da Tabela `times`
-# MAGIC
-# MAGIC | Time\_id | Time\_nome |
-# MAGIC | -------- | ---------- |
-# MAGIC | 10       | Financeiro |
-# MAGIC | 20       | Marketing  |
-# MAGIC | 30       | Logística  |
-# MAGIC | 40       | TI         |
-# MAGIC | 50       | Dados      |
-# MAGIC
-# MAGIC ---
-# MAGIC <br>
-# MAGIC
-# MAGIC ## Tabela `jogos`
-# MAGIC
-# MAGIC ```sql
-# MAGIC CREATE TABLE jogos (
-# MAGIC     jogo_id INTEGER NOT NULL,
-# MAGIC     mandante_time INTEGER NOT NULL,
-# MAGIC     visitante_time INTEGER NOT NULL,
-# MAGIC     mandante_gols INTEGER NOT NULL,
-# MAGIC     visitante_gols INTEGER NOT NULL,
-# MAGIC     UNIQUE(jogo_id)
-# MAGIC );
-# MAGIC ```
-# MAGIC ---
-# MAGIC <br>
-# MAGIC
-# MAGIC Essas tabelas podem ser utilizadas para armazenar os dados das equipes e os resultados dos jogos em um campeonato entre departamentos.
-
-# COMMAND ----------
-
-# MAGIC %md
 # MAGIC ---
 # MAGIC # 🏆 Estrutura do Campeonato
 # MAGIC
@@ -533,18 +482,6 @@ df_comissoes.createOrReplaceTempView('temp_comissoes')
 # MAGIC | 30 | Wilian   | 1501    | 50        |
 # MAGIC
 # MAGIC ---
-# MAGIC
-# MAGIC ## ✅ Resultado Esperado
-# MAGIC
-# MAGIC | funcionario\_id | chefe\_indireto\_id |
-# MAGIC | --------------- | ------------------- |
-# MAGIC | 10              | NULL                |
-# MAGIC | 20              | NULL                |
-# MAGIC | 30              | 10                  |
-# MAGIC | 40              | 10                  |
-# MAGIC | 50              | 10                  |
-# MAGIC | 60              | 10                  |
-# MAGIC | 70              | 10                  |
 # MAGIC
 # MAGIC
 
