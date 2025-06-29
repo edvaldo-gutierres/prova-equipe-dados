@@ -1,11 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Prova Equipe de Dados
-# MAGIC
-# MAGIC Somos a CantuStore: Plataforma de tecnologia e logística que viabiliza soluções completas em pneus, 
-# MAGIC guiando quem compra e apoiando quem vende. Se o assunto é pneu, você resolve aqui. Produtos e 
-# MAGIC serviços em uma experiência 360° para abrir caminhos e ver pessoas e negócios evoluindo junto com 
-# MAGIC a gente. Afinal, ficar parado não é opção, pelos menos pra nós. 
+# MAGIC # Definição de bibliotecas e funções úteis
 
 # COMMAND ----------
 
@@ -13,6 +8,16 @@
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, StringType, DateType, FloatType, IntegerType, DoubleType
 from datetime import datetime
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC # Prova Equipe de Dados
+# MAGIC
+# MAGIC Somos a CantuStore: Plataforma de tecnologia e logística que viabiliza soluções completas em pneus, 
+# MAGIC guiando quem compra e apoiando quem vende. Se o assunto é pneu, você resolve aqui. Produtos e 
+# MAGIC serviços em uma experiência 360° para abrir caminhos e ver pessoas e negócios evoluindo junto com 
+# MAGIC a gente. Afinal, ficar parado não é opção, pelos menos pra nós. 
 
 # COMMAND ----------
 
