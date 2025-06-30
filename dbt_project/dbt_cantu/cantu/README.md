@@ -188,6 +188,12 @@ dbt compile --select nome_do_modelo
 
 ![image1](./../assets/uc.png)
 
+![image1](./../assets/ER.png)
+
+![image1](./../assets/ClassifTimes.png)
+
+![image1](./../assets/ListVend.png)
+
 
 ---
 
