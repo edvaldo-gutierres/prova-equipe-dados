@@ -1,196 +1,236 @@
-# Prova de Proficiência - Engenheiro de Dados | CantuStore
+# 📄 Prova de Proficiência – Engenheiro de Dados | CantuStore
+
+Olá, Capitani! Espero que estejam todos bem.
+
+Me chamo **Edvaldo Gutierres** — [LinkedIn](https://www.linkedin.com/in/edvaldo-gutierres-6b4a5768/)
+
+---
 
 ## 📋 Descrição
 
-Este repositório contém a solução desenvolvida para o teste de proficiência da vaga de **Engenheiro de Dados** da **CantuStore**. O projeto demonstra habilidades técnicas em SQL, análise de dados e processamento de dados utilizando a plataforma **Databricks** para resolver problemas reais de e-commerce.
+Este repositório apresenta a solução desenvolvida para a **prova técnica da vaga de Engenheiro de Dados** da **CantuStore**. O projeto evidencia competências técnicas em **SQL**, **PySpark**, **análise de dados** e **boas práticas de engenharia de dados** na plataforma **Databricks**, com foco em problemas reais do contexto de e-commerce.
+
+> Embora a execução prática não tenha sido solicitada, optei por validar todos os scripts SQL tanto no ambiente **Databricks SQL** quanto via **dbt**, antecipando um dos requisitos desejáveis da vaga e reforçando a aderência ao cenário de produção.
+
+---
 
 ## 🏢 Sobre a CantuStore
 
-A **CantuStore** é uma plataforma de tecnologia e logística que viabiliza soluções completas em pneus, guiando quem compra e apoiando quem vende. Produtos e serviços em uma experiência 360° para abrir caminhos e ver pessoas e negócios evoluindo junto com a gente.
+A **CantuStore** é uma plataforma de tecnologia e logística especializada em soluções completas para o mercado de pneus. Com uma abordagem 360°, conecta quem compra e quem vende, promovendo a evolução conjunta de pessoas e negócios.
+
+---
 
 ## 🎯 Objetivos do Teste
 
-### Parte 1 - SQL (Databricks SQL)
-- Demonstrar proficiência em consultas SQL complexas no ambiente Databricks
-- Resolver problemas de classificação e hierarquia organizacional
-- Implementar análises de comissões e vendas usando Databricks SQL
+### Parte 1 – SQL (Databricks SQL)
 
-### Parte 2 - Análise de Dados (Databricks Notebooks)
-- Analisar dados de carrinho abandonado em e-commerce usando PySpark
-- Identificar padrões e insights para redução de abandono
-- Gerar relatórios estratégicos para tomada de decisão
-- Utilizar Databricks e PySpark para processamento distribuído
+* Demonstrar domínio em **consultas SQL** avançadas
+* Resolver desafios de **classificação**, **hierarquia** e **análise de comissões**
+* Explorar recursos do Databricks SQL para consultas performáticas
+
+### Parte 2 – Análise de Dados (Databricks Notebooks)
+
+* Investigar padrões de **abandono de carrinho** com **PySpark**
+* Gerar **insights e relatórios estratégicos**
+* Utilizar o Delta Lake para **armazenamento otimizado**
+* Automatizar exportações de dados estruturados
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Databricks** - Plataforma principal de desenvolvimento
-- **Databricks SQL** - Consultas SQL e análise de dados
-- **PySpark** - Framework para big data e processamento distribuído
-- **Databricks Notebooks** - Desenvolvimento e documentação
-- **Delta Lake** - Armazenamento de dados otimizado
-- **Git** - Controle de versão
-- **Markdown** - Documentação
+* **Databricks** – Plataforma principal de desenvolvimento
+* **Databricks SQL** – Consultas e análises analíticas
+* **PySpark** – Processamento distribuído e transformações de dados
+* **Delta Lake** – Armazenamento com suporte ACID e time travel
+* **dbt (Data Build Tool)** – Modelagem declarativa, seeds, versionamento e modularização
+* **Poetry** – Gerenciamento de dependências e ambientes virtuais
+* **Git** – Controle de versão
+* **Markdown** – Documentação clara e estruturada
 
-## 📁 Estrutura do Projeto
+---
+
+## 📁 Estrutura inicial do Projeto
 
 ```
 prova-equipe-dados/
-├── README.md                    # Documentação principal
-├── LICENSE                      # Licença MIT
-├── .gitignore                   # Arquivos ignorados pelo Git
-├── databricks/                  # Código Databricks
-│   ├── sql/                     # Queries SQL
-│   │   ├── 1.1_campeonato.sql  # Consulta de classificação
-│   │   ├── 1.2_comissoes.sql   # Análise de comissões
-│   │   └── 1.3_hierarquia.sql  # Organização empresarial
-│   └── notebooks/               # Databricks Notebooks
-│       ├── 2.1_analise_carrinho_abandonado.py
-│       ├── 2.2_relatorios.py
-│       └── 2.3_exportacao_dados.py
-├── data/                        # Dados de entrada
-│   └── carrinho_abandonado.csv
-├── reports/                     # Relatórios gerados
-│   ├── relatorio_produtos_mensal.csv
-│   ├── relatorio_diario.csv
-│   └── top_50_carrinhos.txt
-└── requirements.txt             # Dependências Python
-```
+├── 📄 README.md                 # Documentação principal do projeto
+├── 📋 LICENSE                   # Licença MIT
+├── 🚫 .gitignore               # Arquivos ignorados pelo controle de versão
+├── 📦 pyproject.toml           # Configuração Poetry e dependências
+├── 🔒 poetry.lock              # Lock file com versões fixas
+│
+├── 🏗️ databricks/              # Scripts e notebooks Databricks
+│   ├── sql/                    # Consultas SQL (Parte 1)
+│   │   ├── 1.1_campeonato.sql     # → Classificação de times
+│   │   ├── 1.2_comissoes.sql      # → Análise de vendedores
+│   │   └── 1.3_hierarquia.sql     # → Estrutura organizacional
+│   │
+│   └── notebooks/              # Análises PySpark (Parte 2)
+│       ├── 2.1_analise_carrinho_abandonado.py  # → Padrões de abandono
+│       ├── 2.2_relatorios.py                   # → Relatórios estratégicos
+│       └── 2.3_exportacao_dados.py             # → Exportação estruturada
+│
+├── 🔧 dbt_project/             # Projeto dbt para validação e modelagem
+│   ├── dbt_project.yml            # → Configuração do projeto dbt
+│   ├── profiles.yml               # → Perfis de conexão Databricks
+│   ├── models/                    # → Modelos SQL modulares
+│   │   ├── staging/               # → Camada de staging
+│   │   ├── marts/                 # → Modelos finais (classificacao, comissoes, hierarquia)
+│   │   └── schema.yml             # → Documentação e testes
+│   ├── seeds/                     # → Dados estáticos (CSV)
+│   │   └── sample_data.csv        # → Dados de teste para validação
+│   ├── tests/                     # → Testes automatizados
+│   └── macros/                    # → Funções reutilizáveis
+│
+├── 📊 data/                    # Datasets de entrada
+│   └── carrinho_abandonado.csv    # → Base principal para análises
+│
+└── 📈 reports/                 # Relatórios e exportações geradas
+    ├── relatorio_produtos_mensal.csv  # → Resumo mensal
+    ├── relatorio_diario.csv           # → Métricas diárias
+    └── top_50_carrinhos.txt           # → Maiores carrinhos (formato .txt)
+
+---
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
 
-- **Databricks Workspace** - Acesso à plataforma Databricks
-- **Databricks Runtime** - Cluster configurado com PySpark
-- **Databricks SQL** - Acesso ao SQL Warehouse
-- **Git** - Controle de versão
+* **Databricks Workspace** com permissões
+* **SQL Warehouse** e **cluster PySpark**
+* **Poetry** instalado (`pip install poetry`)
+* **Git** instalado
 
-### Configuração no Databricks
+### Etapas
 
-1. **Clone o repositório**:
 ```bash
+# Clone o repositório
 git clone https://github.com/edvaldo-gutierres/prova-equipe-dados.git
-```
+cd prova-equipe-dados
 
-2. **Configure o Databricks CLI**:
-```bash
-pip install databricks-cli
+# Instale dependências com Poetry
+poetry install
+poetry add databricks-cli dbt-databricks --group dev
+
+# Ative o ambiente virtual
+poetry shell
+
+# Configure o Databricks CLI
 databricks configure --token
-```
 
-3. **Importe os notebooks**:
-```bash
+# Importe os notebooks para o workspace
 databricks workspace import_dir databricks/notebooks /Shared/Prova-Equipe-Dados
+
+# Execute validações dbt (opcional)
+cd dbt_project
+dbt seed    # Carrega dados de teste
+dbt run     # Executa modelos
+dbt test    # Valida testes automatizados
 ```
 
-4. **Configure o cluster**:
-   - Runtime: Databricks Runtime 13.3 LTS (Scala 2.12, Spark 3.4.1)
-   - Node Type: Standard_DS3_v2 ou superior
-   - Min Workers: 1, Max Workers: 3
+**Configurações sugeridas:**
 
-5. **Configure o SQL Warehouse**:
-   - Size: Small (2X-Small)
-   - Auto-stop: 10 minutos
-   - Auto-scaling: Enabled
+* **Cluster:** Databricks Runtime 13.3 LTS (Spark 3.4.1)
+* **SQL Warehouse:** Size Small, auto-stop em 10 min
+
+### Gerenciamento de Dependências
+
+O projeto utiliza **Poetry** para:
+* 📦 **Gerenciamento de dependências** – Controle preciso de versões
+* 🔒 **Ambientes isolados** – Evita conflitos entre projetos
+* 🚀 **Build e deploy** – Empacotamento simplificado
+* 📋 **Metadata do projeto** – Configuração centralizada no `pyproject.toml`
+
+---
 
 ## 📊 Desafios Implementados
 
-### Parte 1 - SQL (Databricks SQL)
+### Parte 1 – SQL
 
 #### 1.1 Campeonato
-- **Objetivo**: Calcular pontos de equipes em campeonato
-- **Regras**: Vitória = 3 pontos, Empate = 1 ponto, Derrota = 0 pontos
-- **Entrada**: Tabelas `times` e `jogos`
-- **Saída**: Classificação ordenada por pontos
-- **Tecnologia**: Databricks SQL
+
+* Cálculo de pontuação por time (vitória, empate, derrota)
+* Classificação final com ordenação por pontos
 
 #### 1.2 Comissões
-- **Objetivo**: Identificar vendedores com até 3 transferências totalizando ≥ R$ 1.024
-- **Entrada**: Tabela `comissoes`
-- **Saída**: Lista de vendedores que atendem aos critérios
-- **Tecnologia**: Databricks SQL
 
-#### 1.3 Organização Empresarial
-- **Objetivo**: Encontrar chefes indiretos com salário ≥ 2x do funcionário
-- **Entrada**: Tabela `colaboradores`
-- **Saída**: Relacionamento funcionário-chefe hierárquico
-- **Tecnologia**: Databricks SQL
+* Filtragem de vendedores com até 3 transferências ≥ R\$1.024
+* Análise agrupada por vendedor
 
-### Parte 2 - Análise de Dados (Databricks Notebooks)
+#### 1.3 Hierarquia Organizacional
 
-#### 2.1 Análise de Carrinho Abandonado
-- **Produtos com mais abandono** - Análise PySpark
-- **Duplas de produtos abandonados** - Processamento distribuído
-- **Produtos com aumento de abandono** - Análise temporal
-- **Produtos novos no primeiro mês** - Agregações complexas
-- **Estados com mais abandonos** - Análise geográfica
+* Mapeamento de chefes diretos e indiretos
+* Verificação de salário ≥ 2x o subordinado
+
+### Parte 2 – PySpark
+
+#### 2.1 Análise de Carrinhos Abandonados
+
+* Produtos com maior índice de abandono
+* Padrões de abandono em duplas de produtos
+* Comparativo temporal e por estado
 
 #### 2.2 Relatórios Estratégicos
-- **Relatório mensal**: Produtos, carrinhos abandonados, itens, valor não faturado
-- **Relatório diário**: Quantidade de carrinhos, itens, valor não faturado
-- **Exportação**: Delta Lake e CSV
 
-#### 2.3 Exportação de Dados
-- **Arquivo .txt**: Top 50 carrinhos com maior valor total
-- **Layout específico**: Dados estruturados conforme especificação
-- **Processamento**: PySpark para performance
+* Relatórios mensais e diários exportados em CSV
+* Métricas: quantidade de itens, valor total, produtos
+
+#### 2.3 Exportação Estruturada
+
+* Geração de `.txt` com os 50 maiores carrinhos abandonados
+* Layout com formatação específica via PySpark
+
+---
 
 ## 🔧 Desenvolvimento
 
-### Padrões de Código
+### Padrões de Código e Boas Práticas
 
-- **Databricks SQL**: Otimização de queries para performance
-- **PySpark**: Uso eficiente de DataFrames e Spark SQL
-- **Notebooks**: Documentação clara com markdown
-- **Delta Lake**: Utilização de recursos ACID
-- **Commits**: Atômicos e descritivos
+* **Databricks SQL** – Escrita otimizada com foco em performance e clareza
+* **PySpark** – Processamento distribuído com DataFrames e expressões eficientes
+* **dbt** – Modelos modulares com uso de `seeds`, `ref`, testes e versionamento
+* **Poetry** – Dependency management, versionamento semântico e builds reproduzíveis
+* **Notebooks** – Documentação com markdowns, visualizações e organização por etapas
+* **Delta Lake** – Uso de ACID, controle de SCDs e time travel
+* **Git** – Commits atômicos e semânticos
 
-### Estrutura de Commits
+### Exemplo de Commits
 
 ```
-feat: adiciona consulta SQL para campeonato no Databricks
-fix: corrige cálculo de pontos com PySpark
-docs: atualiza documentação dos notebooks
-refactor: otimiza query de hierarquia com Delta Lake
-test: adiciona testes para análise de dados
+feat: adiciona cálculo de classificação no campeonato
+fix: ajusta condição de empate em análise de comissões
+refactor: organiza lógica de hierarquia com auto join
+build: atualiza dependências Poetry para dbt 1.6.0
+docs: atualiza README com orientações de execução
+test: valida queries dbt com dados de seed
 ```
 
-## 📈 Métricas de Sucesso
+---
 
-- [ ] Consultas SQL executando no Databricks SQL
-- [ ] Análises PySpark gerando insights relevantes
-- [ ] Relatórios exportados no formato correto
-- [ ] Performance otimizada com processamento distribuído
-- [ ] Documentação clara nos notebooks
-- [ ] Uso eficiente dos recursos Databricks
+## 📈 Indicadores de Sucesso
 
-## 📝 Documentação
+* ✅ Execução validada no Databricks SQL e dbt
+* ✅ Relatórios exportados corretamente
+* ✅ Processamento escalável com PySpark
+* ✅ Scripts claros e bem documentados
+* ✅ Dados versionados e modularizados com dbt
+* ✅ Testes e evidências alinhadas ao cenário real
 
-- **README.md** - Documentação principal do projeto
-- **Databricks SQL/*** - Comentários nas consultas SQL
-- **Databricks Notebooks/*** - Análises documentadas com markdown
-- **LICENSE** - Licença MIT para uso livre
+---
 
-## 🤝 Contribuição
-
-Este é um projeto de teste de proficiência. Para contribuições em projetos futuros:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaAnalise`)
-3. Commit suas mudanças (`git commit -m 'Adiciona análise de tendências'`)
-4. Push para a branch (`git push origin feature/NovaAnalise`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 👨‍💻 Autor
+## 👨‍💻 Sobre o Autor
 
 **Edvaldo Gutierres**
 
-- LinkedIn: [https://www.linkedin.com/in/edvaldo-gutierres-6b4a5768/]
-- Email: [edvaldo_gutierres@yahoo.com.br]
-- GitHub: [https://github.com/edvaldo-gutierres]
+* 💼 [LinkedIn](https://www.linkedin.com/in/edvaldo-gutierres-6b4a5768/)
+* 📧 [edvaldo\_gutierres@yahoo.com.br](mailto:edvaldo_gutierres@yahoo.com.br)
+* 💻 [GitHub](https://github.com/edvaldo-gutierres)
+
+---
+
+## 🙏 Agradecimentos
+
+Agradeço a oportunidade e estou à disposição para qualquer esclarecimento ou conversa técnica.
 
 ---
