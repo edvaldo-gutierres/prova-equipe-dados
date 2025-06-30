@@ -160,19 +160,18 @@ databricks_profile:
 ### 3. Configurar Variáveis de Ambiente
 ```bash
 # Criar arquivo .env
-cat > .env << EOF
 # Databricks Development
 export DATABRICKS_HOST="https://your-workspace.cloud.databricks.com"
-export DATABRICKS_TOKEN="dapi1234567890abcdef"
-export DATABRICKS_CATALOG="hive_metastore"
-export DATABRICKS_SCHEMA="default"
+export DATABRICKS_TOKEN="seu-token"
+export DATABRICKS_CATALOG="seu_catalogo"
+export DATABRICKS_SCHEMA="seu_schema"
 export DATABRICKS_ORG_ID="1234567890123456"
 
 # Databricks Production (opcional)
 export DATABRICKS_HOST_PROD="https://your-prod-workspace.cloud.databricks.com"
-export DATABRICKS_TOKEN_PROD="dapi1234567890abcdef"
-export DATABRICKS_CATALOG_PROD="hive_metastore"
-export DATABRICKS_SCHEMA_PROD="production"
+export DATABRICKS_TOKEN_PROD="seu-token"
+export DATABRICKS_CATALOG_PROD="seu_catalogo"
+export DATABRICKS_SCHEMA_PROD="seu_schema"
 export DATABRICKS_ORG_ID_PROD="1234567890123456"
 EOF
 
@@ -190,7 +189,7 @@ source .env
 
 ---
 
-## 🏗️ Criação de Modelos
+## 🏗️ Exemplo: Criação de Modelos
 
 ### 1. Modelo de Staging (models/staging/stg_times.sql)
 ```sql
@@ -518,7 +517,7 @@ dbt compile --select stg_times
 
 ---
 
-## 🎯 Próximos Passos
+## 🎯 Melhorias Futuras
 
 1. **Criar Macros Customizados**
    - Macros para transformações comuns
@@ -560,5 +559,3 @@ Para dúvidas ou problemas:
 4. Testar com modelo simples primeiro
 
 ---
-
-**🎉 Parabéns! Você está pronto para usar DBT com Databricks!** 
