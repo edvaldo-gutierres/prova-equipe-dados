@@ -90,7 +90,7 @@ prova-equipe-dados/
     ├── relatorio_produtos_mensal.csv  # → Resumo mensal
     ├── relatorio_diario.csv           # → Métricas diárias
     └── top_50_carrinhos.txt           # → Maiores carrinhos (formato .txt)
-
+```
 ---
 
 ## 🚀 Como Executar
