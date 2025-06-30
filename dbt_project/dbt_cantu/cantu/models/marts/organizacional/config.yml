@@ -1,0 +1,10 @@
+models:
+  - name: organizacao_empresarial
+    description: "Tabela de organização empresarial"
+    columns:
+      - name: id_funcionario
+        description: "ID do funcionário"
+        tests:
+          - not_null
+      - name: id_chefe_indireto
+        description: "ID do chefe indireto"

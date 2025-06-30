@@ -1,0 +1,8 @@
+models:
+  - name: lista_vendedores
+    description: "Tabela de lista de vendedores"
+    columns:
+      - name: vendedor
+        description: "Nome do vendedor"
+        tests:
+          - not_null

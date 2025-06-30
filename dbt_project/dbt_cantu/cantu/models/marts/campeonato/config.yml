@@ -1,0 +1,13 @@
+models:
+  - name: classificacao_times
+    description: "Tabela de classificação dos times"
+    columns:
+      - name: time_nome
+        description: "Nome do time"
+        tests:
+          - unique
+          - not_null
+      - name: numero_pontos
+        description: "Número de pontos"
+        tests:
+          - not_null

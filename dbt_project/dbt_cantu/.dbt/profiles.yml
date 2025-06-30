@@ -1,0 +1,30 @@
+databricks_profile:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      method: http
+      host: "dbc-8561c344-ec74.cloud.databricks.com"
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+      catalog: "datacraft_catalog"
+      schema: "dbt"
+      threads: 4
+      timeout: 300
+      retry_all: true
+      http_path: "/sql/1.0/warehouses/f92d7faccbc142c8"
+    
+    prod:
+      type: databricks
+      method: http
+      host: "{{ env_var('DATABRICKS_HOST_PROD', 'dbc-8561c344-ec74.cloud.databricks.com') }}"
+      token: "{{ env_var('DATABRICKS_TOKEN_PROD') }}"
+      catalog: "{{ env_var('DATABRICKS_CATALOG_PROD', 'datacraft_catalog') }}"
+      schema: "{{ env_var('DATABRICKS_SCHEMA_PROD', 'dbt') }}"
+      threads: 8
+      timeout: 600
+      retry_all: true
+      http_path: "/sql/1.0/warehouses/f92d7faccbc142c8"
+
+models:
+  +schema: dbt
+  +schema_dynamic: false

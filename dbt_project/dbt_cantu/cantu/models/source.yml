@@ -1,0 +1,84 @@
+# version: 2
+
+# sources:
+#   - name: raw_data
+#     description: "Dados brutos do sistema - tabelas originais"
+#     database: datacraft_catalog
+#     schema: cantu
+#     tables:
+#       - name: colaboradores
+#         description: "Tabela de comissões de vendedores"
+#         columns:
+#           - name: id
+#             description: "ID único da comissão"
+#             tests:
+#               - unique
+#               - not_null
+#           - name: nome
+#             description: "Nome do colaborador"
+#             tests:
+#               - not_null
+#           - name: salario
+#             description: "Salário do colaborador"
+#             tests:
+#               - not_null
+#           - name: lider_id
+#             description: "ID do chefe indireto"
+      
+#       - name: jogos
+#         description: "Tabela de jogos do campeonato"
+#         columns:
+#           - name: jogo_id
+#             description: "ID único do jogo"
+#             tests:
+#               - unique
+#               - not_null
+#           - name: mandante_time
+#             description: "ID do time da casa"
+#             tests:
+#               - not_null
+#           - name: visitante_time
+#             description: "ID do time visitante"
+#             tests:
+#               - not_null
+#           - name: mandante_gols
+#             description: "Gols marcados pelo time da casa"
+#           - name: visitante_gols
+#             description: "Gols marcados pelo time visitante"
+      
+#       - name: times
+#         description: "Tabela de times do campeonato"
+#         columns:
+#           - name: times
+#             description: "ID único do time"
+#             tests:
+#               - unique
+#               - not_null
+#           - name: time_nome
+#             description: "Nome do time"
+#             tests:
+#               - not_null
+
+#       - name: comissoes
+#         description: "Tabela de comissões de vendedores"
+#         columns:
+#           - name: comissao_id
+#             description: "Representa o identificador único para cada transação de comissão, permitindo rastreamento e referência fáceis."
+#             tests:
+#               - not_null
+#           - name: comprador
+#             description: "Identifica o comprador envolvido na transação, essencial para entender as partes na estrutura de comissão."
+#             tests:
+#               - not_null
+#           - name: vendedor
+#             description: "Identifica o vendedor envolvido na transação, essencial para entender as partes na estrutura de comissão."
+#             tests:
+#               - not_null
+#           - name: dataPgto
+#             description: "Registra a data de pagamento da comissão, permitindo rastreamento temporal e análise de performance."
+#             tests:
+#               - not_null
+#           - name: valor
+#             description: "Registra o valor da comissão, permitindo análise financeira e de performance."
+#             tests:
+#               - not_null

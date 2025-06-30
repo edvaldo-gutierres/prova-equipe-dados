@@ -1,0 +1,49 @@
+name: 'dbt_cantu'
+version: '1.0.0'
+config-version: 2
+
+# Configuração do projeto
+profile: 'databricks_profile'
+
+# Configuração do modelo
+model-paths: ["cantu/models"]
+analysis-paths: ["cantu/analyses"]
+test-paths: ["cantu/tests"]
+seed-paths: ["cantu/seeds"]
+macro-paths: ["cantu/macros"]
+snapshot-paths: ["cantu/snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuração específica para Databricks
+models:
+  dbt_cantu:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+# Configuração de variáveis
+vars:
+  project_name: "dbt_cantu"
+  environment: "development"
+
+# Configuração de seeds (simplificada)
+seeds:
+  dbt_cantu:
+    times:
+      +column_types:
+        time_id: int
+        time_nome: string
+    jogos:
+      +column_types:
+        jogo_id: int
+        mandante_time: string
+        visitante_time: string
+        mandante_gols: int
+        visitante_gols: int
