@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+databricks/dados_fornecidos/*.parquet
+databricks/dados_fornecidos/*.csv
+
 # Distribution / packaging
 .Python
 build/
